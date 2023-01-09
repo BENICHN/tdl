@@ -1,0 +1,729 @@
+/*============= Global =============*/
+
+/* * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+
+html {
+    font-family: Roboto;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    position: fixed;
+}
+
+#approot {
+    height: 100vh;
+    width: 100vw;
+}
+
+ul {
+    margin: 0;
+    overflow: scroll;
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+input[type="text"] {
+    border: 0;
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+select {
+    background-color: transparent;
+    border: 0 solid #ccc;
+    padding: 10px;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+}
+
+/*============= General =============*/
+
+.fc {
+    display: flex;
+    flex-direction: column;
+}
+
+.fr {
+    display: flex;
+    flex-direction: row;
+}
+
+.f1 {
+    flex: 1;
+}
+
+.ac {
+    align-items: center;
+}
+
+.oh {
+    overflow: hidden;
+}
+
+.os {
+    overflow: scroll;
+}
+
+.ov {
+    overflow: visible;
+}
+
+.wh {
+    background-color: white;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.w100f {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.ol {
+    /* overflow-wrap: anywhere; */
+    /* overflow-wrap: break-word; */
+    /* word-wrap: break-word; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.ca {
+    align-items: center;
+}
+
+.cj {
+    justify-content: center;
+}
+
+.cc {
+    justify-content: center;
+    align-items: center;
+}
+
+.h {
+    display: none;
+}
+
+.opbutton:active {
+    opacity: 0.3;
+}
+
+@keyframes opbuttonopacity {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+.sbh {
+    scrollbar-width: none;
+}
+
+.sbh::-webkit-scrollbar {
+    display: none;
+}
+
+/*============= Root =============*/
+
+/*============= SB =============*/
+
+.statusbar {
+    border-bottom: 0.5px solid #ccc;
+    padding: 5px;
+    min-height: 20px;
+}
+
+.statusbar .ud > .btn {
+    margin-right: 3px;
+}
+
+.statusbar .ud > div {
+    margin-right: 10px;
+}
+
+.statusbar .udupdown .icon {
+    margin-right: 3px;
+}
+
+.statusbar .udname {
+    font-weight: bold;
+    color: #767676;
+}
+
+.statusbar .uddown {
+    color: red;
+}
+
+.statusbar .udup {
+    color: green;
+}
+
+.statusbar .udratio {
+    border-radius: 3px;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.statusbar .act {
+    background-color: #95bc0f;
+}
+
+.statusbar .noact {
+    background-color: red;
+}
+
+.statusbar .icon {
+    height: 18px;
+}
+
+.statusbar .btn {
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: dodgerblue;
+}
+
+.statusbar .btns .btn {
+    margin-left: 3px;
+}
+
+/*============= Filter =============*/
+
+.filterselect {
+    flex: 1;
+    flex-basis: 49%;
+    max-width: 49%;
+    font-size: 16px;
+    margin: 2px;
+}
+
+.filter .ph {
+    color: #767676;
+}
+
+.filter .bl {
+    border-left: 0.5px solid #ccc;
+}
+
+.filterdetails {
+    flex-wrap: wrap;
+}
+
+/*============= Loader =============*/
+
+.loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indisp {
+    color: #767676;
+}
+
+/*============= SB =============*/
+
+.searchbar {
+    background-color: white;
+    border: 0.5px solid #ccc;
+    border-radius: 5px;
+}
+
+.searchbartop {
+    height: 45px;
+}
+
+.searchbartop input {
+    margin: 5px;
+    font-size: 16px;
+}
+
+.searchbartop button {
+    min-width: 45px;
+}
+
+.searchbartop .icon {
+    color: #666;
+    height: 20px;
+}
+
+.searchbartop .ordericon {
+    height: 30px;
+}
+
+.searchbartop .filterbutton {
+    border-right: 0.5px solid #ccc;
+}
+
+.searchbartop .orderbutton {
+    border-left: 0.5px solid #ccc;
+}
+
+.searchbartop .sortbuttons {
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.searchbartop form {
+    min-width: 150px;
+}
+
+.searchbarbottom {
+    border-top: 0.5px solid #ccc;
+}
+
+/*============= TL =============*/
+
+.tl hr {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+    border: 0 solid #ccc;
+    border-bottom-width: 0.5px;
+    height: 0;
+}
+
+.tl {
+    padding: 5px;
+    overflow-x: hidden;
+}
+
+.tl .searchbar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.tl .plusbutton {
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.tl .plusbutton > * {
+    height: 30px;
+}
+
+/*============= FExpl =============*/
+
+.fexplchevron {
+    height: 25px;
+}
+
+.fexplpathbutton {
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: 0.5px solid;
+    border-radius: 5px;
+}
+
+.fexplnav {
+    margin: 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.fexplnav > div {
+    height: 35px;
+    align-items: center;
+    width: max-content;
+}
+
+.fexpllisticon {
+    height: 18px;
+    margin-right: 5px;
+}
+
+.fexpllistf {
+    padding: 7px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.fexpllistf > input[type="checkbox"] {
+    margin-right: 7px;
+}
+
+.fff {
+    background-color: white;
+}
+
+.ff5 {
+    background-color: #f5f5f5;
+}
+
+.fexplname {
+    overflow-wrap: anywhere;
+}
+
+/*============= TI =============*/
+
+.ti {
+    border-left: 0.5px solid #ccc;
+}
+
+.ti > header {
+    padding: 5px;
+    border-bottom: 0.5px solid #ccc;
+}
+
+.tinfo {
+    font-family: monospace;
+}
+
+.tipres {
+    text-align: center;
+}
+
+.comlist li, .trackerlist li {
+    margin: 10px;
+}
+
+/*============= Tracker =============*/
+
+.tracker {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.tracker .err {
+    color: tomato;
+}
+
+.tracker .leech {
+    color: red;
+}
+
+.tracker .seed {
+    color: green;
+}
+
+.tracker .compl {
+    color: purple;
+}
+
+.tracker .host {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.tracker .sas {
+    margin-top: 5px;
+}
+
+.trackerslcp {
+    min-width: 60px;
+}
+
+.trackerslcp .icon {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+/*============= Pieces =============*/
+
+.piecesitem {
+    padding: 5px;
+}
+
+.piececs {
+    text-align: center;
+    font-size: 14px;
+}
+
+.pieces {
+    margin-top: 5px;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 5px;
+    border: 0.5px solid black;
+}
+.pieces .piece {
+    margin: 1px;
+    width: 10px;
+    height: 10px;
+    border: 0.5px solid #767676;
+}
+
+.pieces .y {
+    background-color: #767676;
+}
+
+/*============= Peer =============*/
+
+.peeritem {
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.peer {
+    font-size: 13px;
+}
+
+.peer .icon {
+    margin-right: 5px;
+}
+
+.peer .addr {
+    min-width: 165px;
+}
+
+.peer .dl, .peer .ul {
+    min-width: 100px;
+}
+
+/*============= Com =============*/
+
+.com, .tracker {
+    box-shadow: 0 0 8px #ccc;
+    /* border: 0.5px solid #ccc; */
+    border-radius: 10px;
+}
+
+.com .user {
+    margin: 10px;
+}
+
+.com .comcontent {
+    padding: 10px;
+    border-left: 0.5px solid #ccc;
+    overflow-wrap: anywhere;
+}
+
+.com .comage {
+    font-size: 14px;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+/*============= User =============*/
+
+.user {
+    width: 100px;
+}
+
+.user .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-radius: 7px;
+}
+.user .avatar > img {
+    height: 100%;
+    max-width: 100%;
+}
+
+.user .username {
+    text-align: center;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.user .updnsz {
+    font-size: 10px;
+    text-align: center;
+}
+
+.user .upsz {
+    color: green;
+}
+
+.user .dnsz {
+    color: red;
+}
+
+/*============= TFI =============*/
+
+.tfi .tfifooter {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.tfil em {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    text-overflow: ellipsis;
+}
+
+.tfil .tfidetails {
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.tfil .cat {
+   height: 16px;
+   border-radius: 3px;
+}
+
+.tfil .icon {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.tfir .icon {
+    color: dodgerblue;
+}
+
+.tfir > .dl > .icon {
+    height: 21px;
+}
+
+.tfir > .pl > .icon {
+    height: 25px;
+}
+
+.tfir > .pz > .icon {
+    height: 21px;
+}
+
+.tfir > button {
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.tsize {
+    min-width: 80px !important;
+}
+
+.tuspeed, .tdspeed {
+    min-width: 90px !important;
+}
+
+.tseeders {
+    color: green;
+}
+
+.tleechers {
+    color: red;
+}
+
+.tcompl {
+    color: purple;
+}
+
+.tfitext {
+    text-overflow: clip;
+}
+
+.tfidetails {
+    min-width: 60px;
+}
+
+/*============= Tabs =============*/
+
+.react-tabs {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.react-tabs__tab-list {
+    display: flex;
+    flex-direction: row;
+    border-top: 0.5px solid #ccc;
+}
+
+.react-tabs__tab-panel--selected {
+    overflow: hidden;
+    flex: 1;
+}
+
+.tab-icon {
+    color: dodgerblue;
+    height: .8cm;
+}
+
+.react-tabs__tab-list > li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.refresh-view {
+    height: 100%;
+}
+
+/*============= Font =============*/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto/Roboto-Medium.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto/Roboto-Italic.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./fonts/OpenSans/OpenSans-Regular.ttf');
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./fonts/OpenSans/OpenSans-SemiBold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./fonts/OpenSans/OpenSans-Italic.ttf');
+    font-style: italic;
+}
